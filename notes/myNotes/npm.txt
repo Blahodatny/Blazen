@@ -1,0 +1,2 @@
+npm list -g --depth=0 - подивитись список глобально встановлених пакетів
+sudo npm update -g nodemon - оновити nodemon

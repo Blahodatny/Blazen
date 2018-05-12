@@ -1,0 +1,7 @@
+gist - сутність
+enhanced - вдосконалений
+embrace - обхвачувати
+on behalf of - від імені
+tree reconciliation - узгодження дерев (Document Object Model - DOM - virtual representation of HTML in memory)
+immutable - незмінний
+distinguish between - розрізняти між
