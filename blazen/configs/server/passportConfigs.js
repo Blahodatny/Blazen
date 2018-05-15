@@ -8,8 +8,8 @@ module.exports = (server) => {
     passport.serializeUser((user, done) => done(null, user._id));
     // pull user back out of the session
     passport.deserializeUser((id, done) =>
-        require('../configs/db/db').User.findById(id, (error, user) => done(error, user)));
-    require('./strategies/local.strategy')();
+        require('../db/db').User.findById(id, (error, user) => done(error, user)));
+    require('../strategies/local.strategy')();
 };
 
 // В типичном веб-приложении, учетные данные, используемые для аутентификации пользователя будет передаваться только во время авторизации. Если все в порядке, и пользователь существует, то информация о нем сохраняется в сессию, а идентификатор сессии, в свою очередь, сохраняется в cookies браузера.

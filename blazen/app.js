@@ -3,7 +3,7 @@ require('./configs/db/db').config(config.url, config.cloud_name, config.api_key,
 const listen = require('./configs/listen');
 
 const server = new require("express")();
-require('./configs/initial')(server);
+require('./configs/server/initial')(server);
 
 const port = listen.normalizePort(config.port);
 
@@ -21,7 +21,12 @@ server
         res.status(err.status || 500);
         res.render('error');
     })
+    .set('port', port);
+
+const app = require('http').createServer(server)
     .listen(port, () => console.log(`Started on port ${port}!`))
-    .on('error', listen.onError);
+    .on('error', listen.onError)
+    .on('listening', () => listen.onListening(app.address()));
+
 // remarkable - чудовий
 // versatile - різносторонній
