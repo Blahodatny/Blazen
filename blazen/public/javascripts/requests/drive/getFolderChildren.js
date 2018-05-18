@@ -1,3 +1,1 @@
-export default async function getFolderChildren(folderId) {
-    return require('axios').get(`/drive/getFolderChildren?value=${folderId}`);
-}
+export default async folderId => require('axios').get(`/drive/getFolderChildren?value=${folderId}`)

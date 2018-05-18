@@ -2,8 +2,8 @@ import React from "react";
 import Directory from "./Subcomponents/Directory.jsx";
 import Drive from "./Subcomponents/Drive.jsx";
 
-export default function BlazenIncoming(props) {
-    return <div className="drive-directory">
+export default props =>
+    <div className="drive-directory">
         <Directory
             directory={props.directory}
             handleOnClick={props.handleOnClickDirectoryItem}
@@ -16,4 +16,3 @@ export default function BlazenIncoming(props) {
             handleOnClickFolder={props.handleOnClickFolder}
         />
     </div>
-}

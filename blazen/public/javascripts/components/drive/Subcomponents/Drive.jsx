@@ -1,8 +1,8 @@
 import React from "react";
 import Folder from './Folder/Folder.jsx'
 
-export default function Drive(props) {
-    return <div>
+export default props =>
+    <div>
         {props.tree.map(node =>
             <Folder
                 key={node._id + node.outgoing}
@@ -37,4 +37,3 @@ export default function Drive(props) {
                 }
             />)}
     </div>;
-};

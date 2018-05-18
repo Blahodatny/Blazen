@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function NavbarItem(props) {
-    return <div
+export default props =>
+    <div
         className={
             props.currentItem === props.name ?
                 "active" : null
@@ -9,5 +9,4 @@ export default function NavbarItem(props) {
         onClick={props.handleOnClick}>
         <i className={props.name}
            style={{fontSize: '2em'}}/>
-    </div>
-};
+    </div>;

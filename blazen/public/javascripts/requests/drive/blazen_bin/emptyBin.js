@@ -1,3 +1,1 @@
-export default async function emptyBin() {
-    return require('axios').delete('/drive/emptyBin');
-}
+export default async () => require('axios').delete('/drive/emptyBin')

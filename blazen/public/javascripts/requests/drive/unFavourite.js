@@ -1,3 +1,1 @@
-export default async function unFavourite(itemId) {
-    return require('axios').get(`/drive/unFavourite?value=${itemId}`);
-}
+export default async itemId => require('axios').get(`/drive/unFavourite?value=${itemId}`)

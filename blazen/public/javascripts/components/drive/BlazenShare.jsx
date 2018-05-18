@@ -2,8 +2,8 @@ import React from 'react';
 import BlazenIncoming from "./BlazenIncoming.jsx";
 import BlazenOutgoing from "./BlazenOutgoing.jsx";
 
-export default function BlazenShare(props) {
-    return <div className="row">
+export default props =>
+    <div className="row">
         <div className="col-md-6">
             <BlazenIncoming
                 tree={props.treeIncoming}
@@ -29,4 +29,3 @@ export default function BlazenShare(props) {
             />
         </div>
     </div>
-}

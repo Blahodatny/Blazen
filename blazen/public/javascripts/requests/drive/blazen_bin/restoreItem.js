@@ -1,3 +1,1 @@
-export default async function restoreItem(itemId) {
-    return require('axios').get(`/drive/restoreItem?value=${itemId}`);
-}
+export default async itemId => require('axios').get(`/drive/restoreItem?value=${itemId}`)

@@ -1,6 +1,4 @@
-export default async function addFolder(parent, folderName) {
-    return require('axios').post('/drive/addFolder', {
-        parent: parent,
-        value: folderName
-    })
-}
+export default async (parent, folderName) => require('axios').post('/drive/addFolder', {
+    parent: parent,
+    value: folderName
+})

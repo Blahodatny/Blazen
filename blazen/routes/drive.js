@@ -140,11 +140,12 @@ module.exports = require('express').Router().all('*', checkAuth)
                             .remove(),
 
                         OutgoingModel(req.user.username)
-                            .find({idShared: req.query.value}).remove()
+                            .find({idShared: req.query.value})
                     ]).then(result => {
-                        result[2] && IncomingModel(result[2].username)
-                            .find({idShared: req.query.value}).remove()
-                            .catch(console.error);
+                        Promise.all(
+                            result[2].map(res => IncomingModel(res.username).findOneAndRemove({idShared: res.idShared}))
+                                .concat(result[2].map(res => res.remove()))
+                        ).catch(console.error);
 
                         ItemToDelete.getChildren(true, (error, items) =>
                             items.forEach(item => item.update({

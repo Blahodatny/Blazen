@@ -1,8 +1,8 @@
 import React from 'react';
 import NavbarItem from './NavbarItem/NavbarItem.jsx';
 
-export default function Navbar(props) {
-    return <div>
+export default props =>
+    <div>
         {props.navItems.map(item =>
             <NavbarItem
                 key={item.name}
@@ -11,4 +11,3 @@ export default function Navbar(props) {
                 {...item}
             />)}
     </div>;
-};

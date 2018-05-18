@@ -1,3 +1,1 @@
-export default async function rubbishBin() {
-    return require('axios').get('drive/rubbishBin');
-}
+export default async () => require('axios').get('drive/rubbishBin')

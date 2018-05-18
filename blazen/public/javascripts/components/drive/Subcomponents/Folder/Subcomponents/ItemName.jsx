@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ItemName(props) {
+export default props => {
     const reg = (/(gif|jpg|jpeg|tiff|png|jpe|bmp)$/i);
     const test = reg.test(props.format);
     return <span>

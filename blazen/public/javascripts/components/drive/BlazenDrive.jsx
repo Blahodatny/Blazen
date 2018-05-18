@@ -4,8 +4,8 @@ import FileUploadForm from "./Subcomponents/FileUploadForm.jsx";
 import Directory from "./Subcomponents/Directory.jsx";
 import Drive from "./Subcomponents/Drive.jsx";
 
-export default function BlazenDrive(props) {
-    return <div>
+export default props =>
+    <div>
         <div className="navbar-inputs">
             <FolderForm
                 {...props.node.name}
@@ -37,4 +37,3 @@ export default function BlazenDrive(props) {
             />
         </div>
     </div>
-}
